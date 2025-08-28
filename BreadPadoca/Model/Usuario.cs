@@ -26,7 +26,7 @@ namespace BreadPadoca.Model
         public DataTable Logar()
         {
             // Evitar injeçao colocar @
-            string comando = "SELECT * FROM usuarios WHERE = @email AND senha = @senha";
+            string comando = "SELECT * FROM usuarios WHERE email = @email AND senha = @senha";
             /*
             Caso vá utilizar o WHERE, empregue o uso de caracteres coringas,
             semelhante ao apresentado no metódo Cadastrar() acima.
@@ -35,9 +35,12 @@ namespace BreadPadoca.Model
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
+            // Obter o hash da senha:
+            string senhahash = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+
             // Substituir os caracteres coringas (@)
             cmd.Parameters.AddWithValue("@email", Email);
-            cmd.Parameters.AddWithValue("Senha", Senha); // ainda falta obter o hash!
+            cmd.Parameters.AddWithValue("@senha", senhahash);
 
             cmd.Prepare();
             // Declarar tabela que irá receber o resultado:
