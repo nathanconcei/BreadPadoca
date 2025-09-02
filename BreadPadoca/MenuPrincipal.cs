@@ -22,5 +22,11 @@ namespace BreadPadoca
             this.usuario = usuario;
             lblAdm.Text = $"Olá {usuario.NomeCompleto}! Escolha uma opção abaixo:";
         }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormUsuarios formUsuarios = new FormUsuarios(usuario);
+            formUsuarios.ShowDialog(); // Mostrar o form
+        }
     }
 }

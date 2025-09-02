@@ -60,7 +60,6 @@
             this.btnComanda.TabIndex = 7;
             this.btnComanda.Text = "Comandas";
             this.btnComanda.UseVisualStyleBackColor = true;
-
             // 
             // btnProduto
             // 
@@ -94,6 +93,7 @@
             this.btnUsuario.TabIndex = 10;
             this.btnUsuario.Text = "Usuários";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // lblAdm
             // 
@@ -133,7 +133,7 @@
             this.MaximizeBox = false;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BreadPadoca";
+            this.Text = "Menu Principal";
             ((System.ComponentModel.ISupportInitialize)(this.pibChef)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
