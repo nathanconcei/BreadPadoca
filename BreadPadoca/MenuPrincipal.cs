@@ -28,5 +28,20 @@ namespace BreadPadoca
             FormUsuarios formUsuarios = new FormUsuarios(usuario);
             formUsuarios.ShowDialog(); // Mostrar o form
         }
+
+        private void btnComanda_Click(object sender, EventArgs e)
+        {
+            FormComandas formComandas = new FormComandas(usuario); formComandas.ShowDialog();
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            FormCaixa formcaixa = new FormCaixa(usuario); formcaixa.ShowDialog();
+        }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            FormProdutos formprodutos = new FormProdutos(usuario); formprodutos.ShowDialog();
+        }
     }
 }

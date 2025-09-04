@@ -12,9 +12,11 @@ namespace BreadPadoca
 {
     public partial class FormComandas : Form
     {
-        public FormComandas()
+        Model.Usuario usuario;
+        public FormComandas(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
     }
 }

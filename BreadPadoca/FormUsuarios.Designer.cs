@@ -66,6 +66,7 @@
             this.dgvUsuarios.AllowUserToResizeColumns = false;
             this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 41);
             this.dgvUsuarios.Name = "dgvUsuarios";
@@ -251,9 +252,9 @@
             // 
             // btnApagar
             // 
-            this.btnApagar.BackColor = System.Drawing.Color.Red;
+            this.btnApagar.BackColor = System.Drawing.SystemColors.Control;
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.Snow;
+            this.btnApagar.ForeColor = System.Drawing.Color.Red;
             this.btnApagar.Location = new System.Drawing.Point(583, 25);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(160, 59);
