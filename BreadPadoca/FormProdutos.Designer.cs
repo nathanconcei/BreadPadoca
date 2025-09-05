@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutos));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
-            this.lblNomeCadastro = new System.Windows.Forms.Label();
-            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.cmbCategoriaCadastro = new System.Windows.Forms.ComboBox();
+            this.lblCategoriaCadastro = new System.Windows.Forms.Label();
             this.txbPrecoCadastro = new System.Windows.Forms.TextBox();
             this.lblPrecoCadastro = new System.Windows.Forms.Label();
-            this.lblCategoriaCadastro = new System.Windows.Forms.Label();
-            this.cmbCategoriaCadastro = new System.Windows.Forms.ComboBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
+            this.lblNomeCadastro = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.cmbCategoriaEditar = new System.Windows.Forms.ComboBox();
@@ -47,16 +47,10 @@
             this.txbNomeEditar = new System.Windows.Forms.TextBox();
             this.lblNomeEditar = new System.Windows.Forms.Label();
             this.grbApagar = new System.Windows.Forms.GroupBox();
+            this.lblDescricaoApagar = new System.Windows.Forms.Label();
             this.btnApagar = new System.Windows.Forms.Button();
-            this.cmbCategoriaApagar = new System.Windows.Forms.ComboBox();
-            this.lblCategoriaApagar = new System.Windows.Forms.Label();
-            this.txbPrecoApagar = new System.Windows.Forms.TextBox();
-            this.lblPrecoApagar = new System.Windows.Forms.Label();
-            this.txbNomeApagar = new System.Windows.Forms.TextBox();
-            this.lblNomeApagar = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblDescricaoApagar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbCadastrar.SuspendLayout();
             this.grbEditar.SuspendLayout();
@@ -66,12 +60,19 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeColumns = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(12, 12);
             this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(776, 198);
             this.dgvProdutos.TabIndex = 0;
+            this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
             // 
             // grbCadastrar
             // 
@@ -91,21 +92,34 @@
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar";
             // 
-            // lblNomeCadastro
+            // btnCadastrar
             // 
-            this.lblNomeCadastro.AutoSize = true;
-            this.lblNomeCadastro.Location = new System.Drawing.Point(6, 27);
-            this.lblNomeCadastro.Name = "lblNomeCadastro";
-            this.lblNomeCadastro.Size = new System.Drawing.Size(42, 15);
-            this.lblNomeCadastro.TabIndex = 0;
-            this.lblNomeCadastro.Text = "Nome:";
+            this.btnCadastrar.ForeColor = System.Drawing.Color.Peru;
+            this.btnCadastrar.Location = new System.Drawing.Point(9, 138);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(184, 23);
+            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // txbNomeCadastrar
+            // cmbCategoriaCadastro
             // 
-            this.txbNomeCadastrar.Location = new System.Drawing.Point(50, 24);
-            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
-            this.txbNomeCadastrar.Size = new System.Drawing.Size(143, 23);
-            this.txbNomeCadastrar.TabIndex = 1;
+            this.cmbCategoriaCadastro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoriaCadastro.FormattingEnabled = true;
+            this.cmbCategoriaCadastro.Location = new System.Drawing.Point(80, 98);
+            this.cmbCategoriaCadastro.Name = "cmbCategoriaCadastro";
+            this.cmbCategoriaCadastro.Size = new System.Drawing.Size(113, 23);
+            this.cmbCategoriaCadastro.TabIndex = 5;
+            // 
+            // lblCategoriaCadastro
+            // 
+            this.lblCategoriaCadastro.AutoSize = true;
+            this.lblCategoriaCadastro.Location = new System.Drawing.Point(6, 101);
+            this.lblCategoriaCadastro.Name = "lblCategoriaCadastro";
+            this.lblCategoriaCadastro.Size = new System.Drawing.Size(77, 15);
+            this.lblCategoriaCadastro.TabIndex = 4;
+            this.lblCategoriaCadastro.Text = "Categoria:";
             // 
             // txbPrecoCadastro
             // 
@@ -123,33 +137,21 @@
             this.lblPrecoCadastro.TabIndex = 2;
             this.lblPrecoCadastro.Text = "Preco:";
             // 
-            // lblCategoriaCadastro
+            // txbNomeCadastrar
             // 
-            this.lblCategoriaCadastro.AutoSize = true;
-            this.lblCategoriaCadastro.Location = new System.Drawing.Point(6, 101);
-            this.lblCategoriaCadastro.Name = "lblCategoriaCadastro";
-            this.lblCategoriaCadastro.Size = new System.Drawing.Size(77, 15);
-            this.lblCategoriaCadastro.TabIndex = 4;
-            this.lblCategoriaCadastro.Text = "Categoria:";
+            this.txbNomeCadastrar.Location = new System.Drawing.Point(50, 24);
+            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
+            this.txbNomeCadastrar.Size = new System.Drawing.Size(143, 23);
+            this.txbNomeCadastrar.TabIndex = 1;
             // 
-            // cmbCategoriaCadastro
+            // lblNomeCadastro
             // 
-            this.cmbCategoriaCadastro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoriaCadastro.FormattingEnabled = true;
-            this.cmbCategoriaCadastro.Location = new System.Drawing.Point(80, 98);
-            this.cmbCategoriaCadastro.Name = "cmbCategoriaCadastro";
-            this.cmbCategoriaCadastro.Size = new System.Drawing.Size(113, 23);
-            this.cmbCategoriaCadastro.TabIndex = 5;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.ForeColor = System.Drawing.Color.Peru;
-            this.btnCadastrar.Location = new System.Drawing.Point(9, 138);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(184, 23);
-            this.btnCadastrar.TabIndex = 6;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.lblNomeCadastro.AutoSize = true;
+            this.lblNomeCadastro.Location = new System.Drawing.Point(6, 27);
+            this.lblNomeCadastro.Name = "lblNomeCadastro";
+            this.lblNomeCadastro.Size = new System.Drawing.Size(42, 15);
+            this.lblNomeCadastro.TabIndex = 0;
+            this.lblNomeCadastro.Text = "Nome:";
             // 
             // grbEditar
             // 
@@ -178,6 +180,7 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // cmbCategoriaEditar
             // 
@@ -233,12 +236,6 @@
             // 
             this.grbApagar.Controls.Add(this.lblDescricaoApagar);
             this.grbApagar.Controls.Add(this.btnApagar);
-            this.grbApagar.Controls.Add(this.cmbCategoriaApagar);
-            this.grbApagar.Controls.Add(this.lblCategoriaApagar);
-            this.grbApagar.Controls.Add(this.txbPrecoApagar);
-            this.grbApagar.Controls.Add(this.lblPrecoApagar);
-            this.grbApagar.Controls.Add(this.txbNomeApagar);
-            this.grbApagar.Controls.Add(this.lblNomeApagar);
             this.grbApagar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbApagar.ForeColor = System.Drawing.SystemColors.Control;
             this.grbApagar.Location = new System.Drawing.Point(447, 262);
@@ -248,65 +245,27 @@
             this.grbApagar.TabStop = false;
             this.grbApagar.Text = "Apagar";
             // 
+            // lblDescricaoApagar
+            // 
+            this.lblDescricaoApagar.AutoSize = true;
+            this.lblDescricaoApagar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoApagar.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDescricaoApagar.Location = new System.Drawing.Point(51, 68);
+            this.lblDescricaoApagar.Name = "lblDescricaoApagar";
+            this.lblDescricaoApagar.Size = new System.Drawing.Size(238, 14);
+            this.lblDescricaoApagar.TabIndex = 11;
+            this.lblDescricaoApagar.Text = "Selecione o produto para excluir:";
+            // 
             // btnApagar
             // 
             this.btnApagar.ForeColor = System.Drawing.Color.Red;
-            this.btnApagar.Location = new System.Drawing.Point(9, 147);
+            this.btnApagar.Location = new System.Drawing.Point(54, 119);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(326, 23);
+            this.btnApagar.Size = new System.Drawing.Size(235, 42);
             this.btnApagar.TabIndex = 6;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
-            // 
-            // cmbCategoriaApagar
-            // 
-            this.cmbCategoriaApagar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoriaApagar.FormattingEnabled = true;
-            this.cmbCategoriaApagar.Location = new System.Drawing.Point(89, 77);
-            this.cmbCategoriaApagar.Name = "cmbCategoriaApagar";
-            this.cmbCategoriaApagar.Size = new System.Drawing.Size(246, 23);
-            this.cmbCategoriaApagar.TabIndex = 5;
-            // 
-            // lblCategoriaApagar
-            // 
-            this.lblCategoriaApagar.AutoSize = true;
-            this.lblCategoriaApagar.Location = new System.Drawing.Point(6, 80);
-            this.lblCategoriaApagar.Name = "lblCategoriaApagar";
-            this.lblCategoriaApagar.Size = new System.Drawing.Size(77, 15);
-            this.lblCategoriaApagar.TabIndex = 4;
-            this.lblCategoriaApagar.Text = "Categoria:";
-            // 
-            // txbPrecoApagar
-            // 
-            this.txbPrecoApagar.Location = new System.Drawing.Point(61, 48);
-            this.txbPrecoApagar.Name = "txbPrecoApagar";
-            this.txbPrecoApagar.Size = new System.Drawing.Size(274, 23);
-            this.txbPrecoApagar.TabIndex = 3;
-            // 
-            // lblPrecoApagar
-            // 
-            this.lblPrecoApagar.AutoSize = true;
-            this.lblPrecoApagar.Location = new System.Drawing.Point(6, 51);
-            this.lblPrecoApagar.Name = "lblPrecoApagar";
-            this.lblPrecoApagar.Size = new System.Drawing.Size(49, 15);
-            this.lblPrecoApagar.TabIndex = 2;
-            this.lblPrecoApagar.Text = "Preco:";
-            // 
-            // txbNomeApagar
-            // 
-            this.txbNomeApagar.Location = new System.Drawing.Point(50, 19);
-            this.txbNomeApagar.Name = "txbNomeApagar";
-            this.txbNomeApagar.Size = new System.Drawing.Size(285, 23);
-            this.txbNomeApagar.TabIndex = 1;
-            // 
-            // lblNomeApagar
-            // 
-            this.lblNomeApagar.AutoSize = true;
-            this.lblNomeApagar.Location = new System.Drawing.Point(6, 19);
-            this.lblNomeApagar.Name = "lblNomeApagar";
-            this.lblNomeApagar.Size = new System.Drawing.Size(42, 15);
-            this.lblNomeApagar.TabIndex = 0;
-            this.lblNomeApagar.Text = "Nome:";
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // lblTitulo
             // 
@@ -328,17 +287,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblDescricaoApagar
-            // 
-            this.lblDescricaoApagar.AutoSize = true;
-            this.lblDescricaoApagar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricaoApagar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDescricaoApagar.Location = new System.Drawing.Point(6, 117);
-            this.lblDescricaoApagar.Name = "lblDescricaoApagar";
-            this.lblDescricaoApagar.Size = new System.Drawing.Size(238, 14);
-            this.lblDescricaoApagar.TabIndex = 11;
-            this.lblDescricaoApagar.Text = "Selecione o produto para excluir:";
             // 
             // FormProdutos
             // 
@@ -392,12 +340,6 @@
         private System.Windows.Forms.Label lblNomeEditar;
         private System.Windows.Forms.GroupBox grbApagar;
         private System.Windows.Forms.Button btnApagar;
-        private System.Windows.Forms.ComboBox cmbCategoriaApagar;
-        private System.Windows.Forms.Label lblCategoriaApagar;
-        private System.Windows.Forms.TextBox txbPrecoApagar;
-        private System.Windows.Forms.Label lblPrecoApagar;
-        private System.Windows.Forms.TextBox txbNomeApagar;
-        private System.Windows.Forms.Label lblNomeApagar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDescricaoApagar;

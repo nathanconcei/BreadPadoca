@@ -25,7 +25,7 @@ namespace BreadPadoca
             this.usuario = usuario;
 
             AtualizarDgv();
-            
+
         }
 
         public void AtualizarDgv()
