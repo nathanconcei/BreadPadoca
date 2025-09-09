@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -164,8 +165,6 @@ namespace BreadPadoca
                 produtoEditar.Nome = txbNomeEditar.Text;
                 produtoEditar.Preco = preco;
                 produtoEditar.IdCategoria = Convert.ToInt32(cmbCategoriaEditar.Text.Split('-')[0].Trim());
-
-                // TERMINAR
 
                 if (produtoEditar.Modificar())
                 {
