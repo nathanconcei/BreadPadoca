@@ -121,16 +121,22 @@
   <data name="Chapeu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chapeu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ChefBorda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChefBorda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chef" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chef.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChefBorda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChefBorda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="baguete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\baguete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barcode2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

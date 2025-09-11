@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\OrdemComanda.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
@@ -176,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
